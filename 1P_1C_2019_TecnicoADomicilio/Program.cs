@@ -181,6 +181,14 @@ namespace _1P_1C_2019_TecnicoADomicilio
                 listadoDeVisitasPendientes = "Ingrese numero de vista:\nNúmero\tDomicilio\tCliente\tProblema\n" + listadoDeVisitasPendientes;
                 numeroDeVisita = ServValidac.PedirLong(listadoDeVisitasPendientes, Visita.NumMin, Visita.NumMax);
                 posicionDeVisita = buscarVisitaPorNumero(numeroDeVisita);
+                if (posicionDeVisita == -1)
+                {
+                    Console.WriteLine("No hay una visita con el número ingresado");
+                }
+                else
+                {
+
+                }
             }
         }
 
