@@ -179,8 +179,8 @@ namespace _1P_1C_2019_TecnicoADomicilio
             else
             {
                 listadoDeVisitasPendientes = "Ingrese numero de vista:\nNúmero\tDomicilio\tCliente\tProblema\n" + listadoDeVisitasPendientes;
-                Console.WriteLine(listadoDeVisitasPendientes);
-                
+                numeroDeVisita = ServValidac.PedirLong(listadoDeVisitasPendientes, Visita.NumMin, Visita.NumMax);
+                posicionDeVisita = buscarVisitaPorNumero(numeroDeVisita);
             }
         }
 
@@ -192,6 +192,21 @@ namespace _1P_1C_2019_TecnicoADomicilio
                 }
             }
             return (valorARetornar);
+        }
+
+        private int buscarVisitaPorNumero(long numeroABuscar) {
+            int valorADevolver = 0;
+
+            do
+            {
+                valorADevolver = valorADevolver + 1;
+            } while (this.visitas[valorADevolver].Numero != numeroABuscar && valorADevolver < this.visitas.Length);
+
+            if (this.visitas[valorADevolver].Numero != numeroABuscar) {
+                valorADevolver = -1;
+            }
+
+            return (valorADevolver);
         }
 
 
