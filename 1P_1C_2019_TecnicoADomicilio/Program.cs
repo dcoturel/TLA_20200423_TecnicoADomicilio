@@ -187,7 +187,14 @@ namespace _1P_1C_2019_TecnicoADomicilio
                 }
                 else
                 {
+                    if (visitas[posicionDeVisita].Estado != Visita.EstPend)
+                    {
+                        Console.WriteLine("La visita no está pendiente");
+                    }
+                    else
+                    {
 
+                    }
                 }
             }
         }
