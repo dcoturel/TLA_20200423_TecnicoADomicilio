@@ -161,12 +161,22 @@ namespace _1P_1C_2019_TecnicoADomicilio
 
         //SOLUCION - INICIO
 
-        
-        
-        
-        
-        
-        
+        public void CompletarVisita()
+        {
+            String listadoDeVisitasPendientes;
+            long numeroDeVisita;
+            int posicionDeVisita;
+            String causa;
+            String completarVisita;
+
+            //Armar una lista de las visitas pendientes
+            //Si no hay ninguna, mostrar mensaje de error
+        }
+
+
+
+
+
         //SOLUCION - FIN
     }
 
