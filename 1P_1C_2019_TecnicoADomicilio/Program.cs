@@ -193,7 +193,15 @@ namespace _1P_1C_2019_TecnicoADomicilio
                     }
                     else
                     {
-
+                        completarVisita = ServValidac.PedirSoN("Desea completar esta visita? (S/N):\nNúmero\tDomicilio\tCliente\tProblema\n" + visitas[posicionDeVisita].Resumir());
+                        if (completarVisita=="S")
+                        {
+                            causa = ServValidac.PedirStrNoVac("Ingrese causa y solución");
+                            visitas[posicionDeVisita].Reportar(causa);
+                        } else
+                        {
+                            Console.WriteLine("Eligió NO completar esta visita");
+                        }
                     }
                 }
             }
