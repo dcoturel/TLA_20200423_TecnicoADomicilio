@@ -170,7 +170,28 @@ namespace _1P_1C_2019_TecnicoADomicilio
             String completarVisita;
 
             //Armar una lista de las visitas pendientes
+            listadoDeVisitasPendientes = armarListadoVisitasPendientes();
             //Si no hay ninguna, mostrar mensaje de error
+            if (listadoDeVisitasPendientes == "")
+            {
+                Console.WriteLine("No hay visitas pendientes");
+            }
+            else
+            {
+                listadoDeVisitasPendientes = "Ingrese numero de vista:\nNúmero\tDomicilio\tCliente\tProblema\n" + listadoDeVisitasPendientes;
+                Console.WriteLine(listadoDeVisitasPendientes);
+                
+            }
+        }
+
+        private String armarListadoVisitasPendientes() {
+            String valorARetornar = "";
+            for (int i = 0; i < this.visitas.Length; i++) {
+                if (this.visitas[i].Estado == Visita.EstPend) {
+                    valorARetornar = valorARetornar + this.visitas[i].Resumir();
+                }
+            }
+            return (valorARetornar);
         }
 
 
